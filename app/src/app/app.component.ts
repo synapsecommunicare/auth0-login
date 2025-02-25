@@ -11,12 +11,8 @@ import { AuthService } from '@auth0/auth0-angular';
     <router-outlet></router-outlet>
   `,
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   constructor(public auth: AuthService, private router: Router) {
-    
-  }
-
-  ngOnInit() {
     // Subscribe to the authentication state
     this.auth.isAuthenticated$.subscribe((isAuthenticated) => {
       if (isAuthenticated) {
@@ -27,5 +23,5 @@ export class AppComponent implements OnInit{
         this.router.navigate(['/login']);
       }
     });
-  }
+  } 
 }

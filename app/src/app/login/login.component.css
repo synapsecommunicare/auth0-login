@@ -1,72 +1,88 @@
-
+/* Define CSS variables for the theme */
+:root {
+    --primary-color: #0078d4; /* Azure blue */
+    --secondary-color: #ffffff; /* White */
+    --text-color: #000000; /* Black */
+    --button-hover: #005a9e; /* Darker blue for hover */
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Base styles for all screen sizes */
   .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background: var(--secondary-color);
+    min-height: 100vh; /* Full viewport height */
+    background: var(--secondary-color); /* White background */
   }
-
+  
   .login-box {
-    background: var(--primary-color);
+    background: var(--secondary-color); /* White background */
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: var(--box-shadow); /* Subtle shadow */
     text-align: center;
-    color: var(--text-color);
+    color: var(--text-color); /* Black text */
+    width: 100%;
+    max-width: 400px; /* Maximum width for larger screens */
+    border: 1px solid #e0e0e0; /* Light border */
   }
-
+  
+  /* Logo styling */
   .logo {
-    max-width: 100px;
-    margin-bottom: 20px;
+    max-width: 100px; /* Adjust the size as needed */
+    margin-bottom: 20px; /* Space between logo and heading */
   }
-
+  
   .login-box h1 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: var(--primary-color); /* Azure blue for the heading */
   }
-
+  
   .login-box p {
     font-size: 16px;
     margin-bottom: 20px;
+    color: var(--text-color); /* Black text */
   }
-
+  
   .login-button {
-    background: var(--text-color);
-    color: var(--primary-color);
+    background: var(--primary-color); /* Azure blue */
+    color: var(--secondary-color); /* White text */
     padding: 12px 24px;
     font-size: 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 6px; /* Rounded corners */
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
   }
-
+  
   .login-button:hover {
-    background: var(--button-hover);
-    color: var(--text-color);
+    background: var(--button-hover); /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
   }
-
+  
+  /* Media queries for mobile screens */
   @media (max-width: 600px) {
     .login-box {
-      padding: 20px;
-      width: 90%;
+      padding: 20px; /* Reduce padding for smaller screens */
+      width: 90%; /* Full width on mobile */
     }
-
+  
     .logo {
-      max-width: 80px;
+      max-width: 80px; /* Smaller logo for mobile */
     }
-
+  
     .login-box h1 {
-      font-size: 20px;
+      font-size: 20px; /* Smaller heading for mobile */
     }
-
+  
     .login-box p {
-      font-size: 14px;
+      font-size: 14px; /* Smaller text for mobile */
     }
-
+  
     .login-button {
-      padding: 10px 20px;
+      padding: 10px 20px; /* Smaller button for mobile */
       font-size: 14px;
     }
   }
